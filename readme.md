@@ -69,7 +69,7 @@ task("lint", [], function() {
     describe: false
   };
 
-  var pass = lint.run(files.toArray(), options, globals);
+  var pass = require("jake-jshint").validateFileList(files.toArray(), options, globals);
   if (!pass) fail("Lint failed");
 });
 ```
